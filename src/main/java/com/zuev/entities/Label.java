@@ -5,6 +5,10 @@ public class Label {
     private long id;
     private String name;
 
+    public Label(){
+
+    }
+
     public Label(String name) {
         this.name = name;
     }
