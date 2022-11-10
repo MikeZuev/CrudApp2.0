@@ -207,8 +207,26 @@ public class MySqlLabelRepositoryImpl implements LabelRepository {
         try {
             sql = "delete from labels where label_id = ?";
             preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setLong(1, aLong);
+            preparedStatement.executeUpdate(sql);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            if(preparedStatement != null){
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(connection != null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
 
     }

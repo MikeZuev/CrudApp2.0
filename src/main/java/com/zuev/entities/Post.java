@@ -11,19 +11,37 @@ public class Post {
 
     private List<Label> labels;
 
+    public Post(){
+
+    }
+
     public Post(String content) {
         this.content = content;
     }
 
-    public Post(String content, Date created, Date updated, List<Label> labels) {
+    public Post(String content, List<Label> labels){
+        this.content = content;
+        this.labels = labels;
+
+    };
+
+    public Post(long id, String content, List<Label> labels){
+        this.id = id;
+        this.content = content;
+        this.labels = labels;
+    }
+
+    public Post(long id, String content, Date created, Date updated, List<Label> labels) {
+        this.id = id;
         this.content = content;
         this.created = created;
         this.updated = updated;
         this.labels = labels;
+
     }
 
-
-
+    public Post(String content, Date date, Date date1, List<Label> labels) {
+    }
 
 
     public long getId() {

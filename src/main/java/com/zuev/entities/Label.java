@@ -13,6 +13,11 @@ public class Label {
         this.name = name;
     }
 
+    public Label(long id, String name){
+        this.id = id;
+        this.name = name;
+    }
+
     public long getId() {
         return id;
     }
@@ -29,4 +34,11 @@ public class Label {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Label{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
